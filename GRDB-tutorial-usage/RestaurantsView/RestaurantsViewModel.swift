@@ -10,9 +10,14 @@ class RestaurantsViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
     @Published var isSheetShown = false
 
+    private let db = LocalDatabase.shared
+
     init() {
-
-        // bind
-
+        db
+            .observeRestaurants()
+            .catch { err in
+                return Just([])
+            }
+            .assign(to: &$restaurants)
     }
 }

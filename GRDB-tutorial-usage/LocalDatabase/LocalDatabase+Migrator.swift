@@ -26,7 +26,7 @@ extension LocalDatabase {
 
     private func createRestaurantAndDishTables(_ db: GRDB.Database) throws {
         try db.create(table: "restaurant") { table in
-            table.column("id", .text).primaryKey()
+            table.autoIncrementedPrimaryKey("id")
             table.column("name", .text).notNull()
         }
 

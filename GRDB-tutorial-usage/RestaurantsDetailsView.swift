@@ -15,7 +15,7 @@ struct RestaurantDetailsView: View {
         List(dishes) { dish in
             Text(dish.name)
         }.task {
-            // fetch dishes
+            dishes = try! await LocalDatabase.shared.getDishesForRestaurant(restaurant)
         }
         .navigationTitle(restaurant.name)
     }

@@ -9,8 +9,10 @@ import Foundation
 import GRDB
 
 
-struct Dish: Identifiable {
-    var id: String
+struct Dish: Identifiable, Codable {
+    var id: Int64?
+    var restaurantId: Int64
     var name: String
 }
 
+extension Dish: TableRecord, FetchableRecord, EncodableRecord, PersistableRecord {}

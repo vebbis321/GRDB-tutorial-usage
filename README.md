@@ -1,3 +1,3 @@
-# GRDB-tutorial-setup
+# GRDB-tutorial-usage
 
 Repo for: https://youtu.be/CjYxAXBzrjo
